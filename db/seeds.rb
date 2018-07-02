@@ -5,3 +5,23 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+admins = [{
+
+	email: 'bhuiya@gmail.com',
+  password: '123456'
+
+
+},
+{
+  email: 'demo@demo.com',
+  password: '123456'
+
+
+ }
+
+]
+
+admins.each do |s|
+	Admin.create(s) unless Admin.exists?(email: s[:email])
+end
