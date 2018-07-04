@@ -1,0 +1,43 @@
+<h1> Editorial Booking Page </h1>
+<%= form_for @booking do |f| %>
+      <div>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </div>
+      <br>
+      <div>
+        <%= f.label :price %>
+        <%= f.text_field :price %>
+      </div>
+      <br>
+      <div>
+          <%= f.label :address %>
+          <%= f.text_field :address %>
+      </div>
+      <br>
+      <div>
+          <%= f.label :state %>
+          <%= f.text_field :state %>
+      </div>
+      <br>
+      <div>
+          <%= f.label :country %>
+          <%= f.text_field :country %>
+      </div>
+      <br>
+      <div>
+          <%= f.label :phone %>
+          <%= f.text_field :phone %>
+      </div>
+      <br>
+      <div>
+          <%= f.label :email %>
+          <%= f.text_field :email %>
+      </div>
+
+    <br>
+<div>
+  <%= f.submit %>
+</div>
+
+<% end %>

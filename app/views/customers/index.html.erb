@@ -1,0 +1,28 @@
+<H1> Cutomer Page </H1>
+<% @bookings.each do |booking| %>
+      <br>
+      <%=  booking.name  %>
+      <br>
+      <%=  booking.price  %>
+      <br>
+      <%=  booking.address  %>
+      <br>
+      <%=  booking.state  %>
+      <br>
+      <%=  booking.country  %>
+      <br>
+      <%=  booking.phone  %>
+      <br>
+      <%=  booking.email  %>
+
+      <%= link_to booking_path(booking), class: "btn btn-secondary" do %>
+           <h6><i class="fa fa-info"  aria-hidden="true"></i> Show </h6>
+      <% end %>
+      <%= link_to edit_booking_path(booking), class: "btn btn-secondary" do %>
+            <h6>  <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit </h6>
+      <% end %>
+      <%= link_to booking, method: :delete,  class: 'btn btn-secondary' do %>
+          <h6>  <i class="fa fa-trash-o" aria-hidden="true"></i> Delete </h6>
+      <% end %>
+
+<% end %>

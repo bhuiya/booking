@@ -1,0 +1,24 @@
+<H1> User Home Page </H1>
+
+<% @bookings.each do |booking| %>
+      <br>
+      <%=  booking.name  %>
+      <br>
+      <%=  booking.price  %>
+      <br>
+      <%=  booking.address  %>
+      <br>
+      <%=  booking.state  %>
+      <br>
+      <%=  booking.country  %>
+      <br>
+      <%=  booking.phone  %>
+      <br>
+      <%=  booking.email  %>
+
+      <%= link_to  new_booking_booking_customer_path(booking.id), class: "btn btn-secondary" do %>
+           <h6><i class="fa fa-info"  aria-hidden="true"></i> Registrtion </h6>
+      <% end %>
+
+
+<% end %>
