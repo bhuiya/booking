@@ -1,4 +1,4 @@
 class Booking < ApplicationRecord
-    has_many :booking_customers, dependent: :destroy
-    has_many :customers, through: :booking_customers, dependent: :destroy
+    has_many :booking_users, dependent: :destroy
+    has_many :users, through: :booking_users, dependent: :destroy
 end

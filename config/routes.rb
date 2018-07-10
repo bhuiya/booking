@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :home
   resources :userhome
   resources :bookings do
-    resources :booking_customers, only: [:new, :create, :show, :edit]
+    resources :booking_users, only: [:new, :create, :show, :edit]
   end
 
   root :to => 'home#index'

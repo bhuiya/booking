@@ -1,36 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Sintony" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <title>RailsBooking</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
 
-<html>
-  <head>
-    <title>RailsBooking</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+</head>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
-  </head>
+<body class="<%= controller_name %> <%= action_name %>">
+ <%= custom_bootstrap_flash %>
+  <div class="navigation">
+    <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
 
-  <body>
+    <label for="navi-toggle" class="navigation__button">
+                <span class="navigation__icon">&nbsp;</span>
+    </label>
+    <div class="navigation__background">&nbsp;</div>    <nav class="navigation__nav">
+          <ul class="navigation__list">
+            <li class="navigation__item "><%= link_to 'User Login', new_user_session_path, class:" navigation__item navigation__link"  %>
+            </li>
+            <li class="navigation__item "><%= link_to 'User Sign Up', new_user_registration_path, class:" navigation__item navigation__link"  %>
+            </li>
+            <li class="navigation__item "><%= link_to 'Admin Login', new_admin_session_path, class:" navigation__item navigation__link"  %>
+            </li>
+          </ul>
+        </nav>
+      </div>
 
-    <% if notice %>
-  <p class="alert alert-success"><%= notice %></p>
-<% end %>
-<% if alert %>
-  <p class="alert alert-danger"><%= alert %></p>
-<% end %>
+    <header class="header">
+      <div class="header__logo-box">
+        <img src="assets/logo-white.png" alt="Logo" class="header__logo">
+      </div>
 
-    <p class="navbar-text pull-right">
-<% if user_signed_in? %>
-  Logged in as <strong><%= current_user.email %></strong>.
-  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+      <div class="header__text-box">
+        <h1 class="heading-primary">
+                      <span class="heading-primary--main">New York City</span>
+                      <span class="heading-primary--sub">Manhattan - Queens Bus Tour</span>
+        </h1>
+         <%= link_to 'Discover our tours', "#section-tours", class: "btn btn--white btn--animated" %>
 
-<% else %>
-  <%= link_to "User Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-  <%= link_to "User Login", new_user_session_path, :class => 'navbar-link'  %>
-<% end %>
-</p>
+      </div>
+    </header>
+
+    <!-- <% if notice %>
+          <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+          <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+
+        <p class="navbar-text pull-right">
+            <% if user_signed_in? %>
+              Logged in as <strong><%= current_user.email %></strong>.
+              <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+              <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+
+            <% else %>
+              <%= link_to "User Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+              <%= link_to "User Login", new_user_session_path, :class => 'navbar-link'  %>
+            <% end %>
+        </p> -->
     <%= yield %>
   </body>
 </html>

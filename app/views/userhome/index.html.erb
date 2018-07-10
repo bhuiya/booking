@@ -1,24 +1,87 @@
-<H1> User Home Page </H1>
 
-<% @bookings.each do |booking| %>
-      <br>
-      <%=  booking.name  %>
-      <br>
-      <%=  booking.price  %>
-      <br>
-      <%=  booking.address  %>
-      <br>
-      <%=  booking.state  %>
-      <br>
-      <%=  booking.country  %>
-      <br>
-      <%=  booking.phone  %>
-      <br>
-      <%=  booking.email  %>
 
-      <%= link_to  new_booking_booking_customer_path(booking.id), class: "btn btn-secondary" do %>
-           <h6><i class="fa fa-info"  aria-hidden="true"></i> Registrtion </h6>
+
+<div class="u-center-text u-margin-bottom-big ">
+    <h2 class="heading-secondary">
+       Bus Tour Registration
+    </h2>
+</div>
+
+
+ <section id="action" class="row justify-content-md-left ">
+  <div class="container-fluid">
+    <div class="col-3">
+     <%= link_to  userhome_path(current_user),  class:"btn btn-success btn-block btn-color" do %>
+        <i class="fa fa-plus text-left"></i> List of My Booking
+     <% end %>
+    </div>
+  </div>
+ </section>
+
+
+ <div class="row justify-content-md-center fluid user_page">
+ 	 <div class="col-2"></div>
+   <div class="col-8">
+     <% @bookings.each_with_index do |booking, index| %>
+        <% @flag = @user_bookings.detect {|user_booking| user_booking.booking_id == booking.id} %>
+          <div id= counter class="parent-tr font_properties">
+
+            <%  if index % 3 == 0 %>
+            <ul class="table_format guest_one font_properties ">
+                  <li class="font_properties ">&nbsp &nbsp Booking Name: <%=  booking.name %></li>
+                  <li class="font_properties "> &nbsp &nbsp  Price: $<%=  booking.price  %> </li>
+                  <li class="font_properties"> &nbsp &nbsp Address: <%=  booking.address  %> </li>
+                  <li class="font_properties "> &nbsp &nbsp  State: <%=  booking.state %> </li>
+                  <li class="font_properties "> &nbsp &nbsp Country: <%=  booking.country %> </li>
+                  <li class="font_properties "> &nbsp &nbsp  Phone: <%= booking.phone %> </li>
+                  <li class="font_properties "> &nbsp &nbsp Email: <%= booking.email %> </li>
+                  <br>&nbsp
+                  <% if @flag %>
+                      You Registrar
+                  <% else %>
+                      <%= link_to 'Registration', new_booking_booking_user_path(booking.id), class: "  btn btn-success btn--white btn--animated   float-right" %>
+                  <% end %>
+                 <br>
+             </ul>
+             <% end %>
+             <%  if index % 3 == 1 %>
+             <ul class="table_format guest_two font_properties ">
+                   <li class="font_properties ">&nbsp &nbsp Booking Name: <%=  booking.name %></li>
+                   <li class="font_properties "> &nbsp &nbsp  Price: $<%=  booking.price  %> </li>
+                   <li class="font_properties"> &nbsp &nbsp Address: <%=  booking.address  %> </li>
+                   <li class="font_properties "> &nbsp &nbsp  State: <%=  booking.state %> </li>
+                   <li class="font_properties "> &nbsp &nbsp Country: <%=  booking.country %> </li>
+                   <li class="font_properties "> &nbsp &nbsp  Phone: <%= booking.phone %> </li>
+                   <li class="font_properties "> &nbsp &nbsp Email: <%= booking.email %> </li>
+                   <br>&nbsp
+                   <% if @flag %>
+                       You Registrar
+                   <% else %>
+                       <%= link_to 'Registration', new_booking_booking_user_path(booking.id), class: "  btn btn-success btn--white btn--animated   float-right" %>
+                   <% end %>
+                  <br>
+              </ul>
+              <% end %>
+              <%  if index % 3 == 2 %>
+              <ul class="table_format guest_four font_properties ">
+                    <li class="font_properties ">&nbsp &nbsp Booking Name: <%=  booking.name %></li>
+                    <li class="font_properties "> &nbsp &nbsp  Price: $<%=  booking.price  %> </li>
+                    <li class="font_properties"> &nbsp &nbsp Address: <%=  booking.address  %> </li>
+                    <li class="font_properties "> &nbsp &nbsp  State: <%=  booking.state %> </li>
+                    <li class="font_properties "> &nbsp &nbsp Country: <%=  booking.country %> </li>
+                    <li class="font_properties "> &nbsp &nbsp  Phone: <%= booking.phone %> </li>
+                    <li class="font_properties "> &nbsp &nbsp Email: <%= booking.email %> </li>
+                    <br>&nbsp
+                    <% if @flag %>
+                        You Registrar
+                    <% else %>
+                        <%= link_to 'Registration', new_booking_booking_user_path(booking.id), class: "  btn btn-success btn--white btn--animated   float-right" %>
+                    <% end %>
+                   <br>
+               </ul>
+               <% end %>
+           </div>
       <% end %>
-
-
-<% end %>
+    </div>
+    <div class="col-2"></div>
+   </div>

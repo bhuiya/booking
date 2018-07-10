@@ -11,6 +11,9 @@ class HomeController < ApplicationController
 
     end
 
+    @bookings = Booking.all
+    puts @bookings.name
+
 
 
   end

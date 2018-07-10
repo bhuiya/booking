@@ -1,13 +1,14 @@
 class BookingsController < ApplicationController
 
-      def new
+  layout :resolve_layout
+
+
+     def new
            @booking = Booking.new
-      end
+     end
 
+     def create
 
-    	def create
-    		# the below will do the following
-    		# Todo.create({name: '...', description: '...'})
     		@booking = Booking.create(booking_params)
     		if @booking.valid?
     			flash[:success] = 'Your todo has been successfully created'
@@ -16,35 +17,46 @@ class BookingsController < ApplicationController
     			flash[:error] = 'Missing information'
     			render :new
     		end
-    	end
+     end
 
-      def index
+     def index
            @bookings = Booking.all
            puts @bookings.name
-      end
+     end
 
-      def edit
+     def edit
            @booking = Booking.find(params[:id])
-      end
+     end
 
-      def show
+     def show
          @booking_show = Booking.find(params[:id])
-      end
+     end
 
-      def update
+    def update
          booking = Booking.find(params[:id])
          booking.update(booking_params)
          redirect_to bookings_path
 
-      end
-      def destroy
+    end
+    def destroy
           Booking.destroy(params[:id])
           redirect_to bookings_path
-      end
+    end
 
   private
    def booking_params
 	  	params.require(:booking).permit(:name, :price, :address, :state, :country, :phone, :email)
 	  end
+
+
+    def resolve_layout
+      case action_name
+      when "new", "create", "index", "edit"
+        "secondary.html.erb"
+
+      else
+        "application.html.erb"
+      end
+    end
 
 end

@@ -1,0 +1,109 @@
+
+<div class="u-center-text u-margin-bottom-big">
+    <h2 class="heading-secondary">
+       List of <%= current_user.first_name %> <%= current_user.last_name %>  Booking
+    </h2>
+</div>
+
+<section id="action" class="row justify-content-md-left ">
+ <div class="container-fluid">
+   <div class="col-3">
+    <%= link_to  userhome_index_path,  class:"btn btn-success btn-block btn-color" do %>
+       <i class="fa fa-plus text-left"></i> Back to Booking
+    <% end %>
+   </div>
+ </div>
+</section>
+
+    <div class="row justify-content-md-center fluid ">
+    	 <div class="col-2">
+
+    	 </div>
+
+    	  <div class="col-8">
+
+
+
+    <% @user_bookings.each_with_index do |user_booking, index| %>
+
+               <%  if index % 3 == 0 %>
+                   <div id= counter class="parent-tr font_properties">
+
+
+                     <ul class="table_format guest_one font_properties ">
+
+
+
+                           <li class="font_properties ">&nbsp &nbsp Booking Name: <%=  user_booking.booking.name %></li>
+                           <li class="font_properties "> &nbsp &nbsp  Price: $<%=  user_booking.booking.price  %> </li>
+                           <li class="font_properties"> &nbsp &nbsp Address: <%=  user_booking.booking.address  %> </li>
+                           <li class="font_properties "> &nbsp &nbsp  State: <%=  user_booking.booking.state %> </li>
+                           <li class="font_properties "> &nbsp &nbsp Country: <%=  user_booking.booking.country %> </li>
+                           <li class="font_properties "> &nbsp &nbsp  Phone: <%= user_booking.booking.phone %> </li>
+                             <li class="font_properties "> &nbsp &nbsp Email: <%= user_booking.booking.email %> </li>
+                             <br>&nbsp
+
+
+
+                          <br>
+
+                      </ul>
+                     </div>
+                     <% end %>
+
+                     <%  if index % 3 == 1 %>
+                         <div id= counter class="parent-tr font_properties">
+
+
+                           <ul class="table_format guest_two font_properties ">
+
+
+
+                                 <li class="font_properties ">&nbsp &nbsp Booking Name: <%=  user_booking.booking.name %></li>
+                                 <li class="font_properties "> &nbsp &nbsp  Price: $<%=  user_booking.booking.price  %> </li>
+                                 <li class="font_properties"> &nbsp &nbsp Address: <%=  user_booking.booking.address  %> </li>
+                                 <li class="font_properties "> &nbsp &nbsp  State: <%=  user_booking.booking.state %> </li>
+                                 <li class="font_properties "> &nbsp &nbsp Country: <%=  user_booking.booking.country %> </li>
+                                 <li class="font_properties "> &nbsp &nbsp  Phone: <%= user_booking.booking.phone %> </li>
+                                   <li class="font_properties "> &nbsp &nbsp Email: <%= user_booking.booking.email %> </li>
+                                   <br>&nbsp
+
+
+
+                                <br>
+
+                            </ul>
+                           </div>
+                           <% end %>
+                           <%  if index % 3 == 2 %>
+                               <div id= counter class="parent-tr font_properties">
+
+
+                                 <ul class="table_format guest_three font_properties ">
+
+
+
+                                       <li class="font_properties ">&nbsp &nbsp Booking Name: <%=  user_booking.booking.name %></li>
+                                       <li class="font_properties "> &nbsp &nbsp  Price: $<%=  user_booking.booking.price  %> </li>
+                                       <li class="font_properties"> &nbsp &nbsp Address: <%=  user_booking.booking.address  %> </li>
+                                       <li class="font_properties "> &nbsp &nbsp  State: <%=  user_booking.booking.state %> </li>
+                                       <li class="font_properties "> &nbsp &nbsp Country: <%=  user_booking.booking.country %> </li>
+                                       <li class="font_properties "> &nbsp &nbsp  Phone: <%= user_booking.booking.phone %> </li>
+                                         <li class="font_properties "> &nbsp &nbsp Email: <%= user_booking.booking.email %> </li>
+                                         <br>&nbsp
+
+
+
+                                      <br>
+
+                                  </ul>
+                                 </div>
+                                 <% end %>
+       <% end %>
+     </div>
+         <div class="col-2">
+         </div>
+
+
+
+      </div>

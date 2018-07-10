@@ -1,5 +1,8 @@
 <h1> Booking Customer </h1>
-<%= params[:booking_id] %>
 
 
-<%= link_to 'Registrar', booking_booking_customers_path(params[:booking_id]) %>.
+
+<%= form_for [@booking, @booking_customer]  do |f| %>
+
+  <%= f.submit 'Registrar' %>
+<% end %>

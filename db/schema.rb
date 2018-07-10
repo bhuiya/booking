@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_02_171902) do
+ActiveRecord::Schema.define(version: 2018_07_05_175057) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,13 +32,13 @@ ActiveRecord::Schema.define(version: 2018_07_02_171902) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
-  create_table "booking_customers", force: :cascade do |t|
+  create_table "booking_users", force: :cascade do |t|
     t.bigint "booking_id"
-    t.bigint "customer_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["booking_id"], name: "index_booking_customers_on_booking_id"
-    t.index ["customer_id"], name: "index_booking_customers_on_customer_id"
+    t.index ["booking_id"], name: "index_booking_users_on_booking_id"
+    t.index ["user_id"], name: "index_booking_users_on_user_id"
   end
 
   create_table "bookings", force: :cascade do |t|
@@ -47,16 +47,6 @@ ActiveRecord::Schema.define(version: 2018_07_02_171902) do
     t.string "address"
     t.string "state"
     t.string "country"
-    t.string "phone"
-    t.string "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "customers", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "address"
     t.string "phone"
     t.string "email"
     t.datetime "created_at", null: false
@@ -84,6 +74,6 @@ ActiveRecord::Schema.define(version: 2018_07_02_171902) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "booking_customers", "bookings"
-  add_foreign_key "booking_customers", "customers"
+  add_foreign_key "booking_users", "bookings"
+  add_foreign_key "booking_users", "users"
 end

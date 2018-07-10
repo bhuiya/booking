@@ -774,7 +774,7 @@ body {
   background-image: -webkit-gradient(linear, left top, right top, from(#7ed56f), to(#28b485));
   background-image: linear-gradient(to right, #7ed56f, #28b485);
   -webkit-background-clip: text;
-  color: transparent;
+  color: #484eab;
   letter-spacing: .2rem;
   -webkit-transition: all .2s;
   transition: all .2s
@@ -855,7 +855,7 @@ body {
   height: 100%;
   width: 100%;
   z-index: -1;
-  opacity: .15;
+  opacity: .9;
   overflow: hidden
 }
 
@@ -875,7 +875,8 @@ body {
   -webkit-transition: all .2s;
   transition: all .2s;
   position: relative;
-  font-size: 1.6rem;
+  /* font-size: 1.6rem; */
+  font-size: 18px;
   border: none;
   cursor: pointer
 }
@@ -917,6 +918,15 @@ body {
 
 .btn--green::after {
   background-color: #55c57a
+}
+
+.btn--blue {
+  background-color: ##4267B2;
+  color: #fff
+}
+
+.btn--blue::after {
+  background-color: ##4267B2
 }
 
 .btn::after {
@@ -1739,7 +1749,7 @@ body {
 }
 
 .row [class^="col-"]:not(:last-child) {
-  margin-right: 6rem
+  /* margin-right: 6rem */
 }
 
 @media only screen and (max-width: 56.25em) {
@@ -1781,8 +1791,8 @@ body {
 
 .header {
   height: 85vh;
-  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(126, 213, 111, 0.8)), to(rgba(40, 180, 133, 0.8))), url(manhattan.jpg);
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(manhattan.jpg);
+  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(126, 213, 111, 0.8)), to(rgba(40, 180, 133, 0.8))), url(/assets/manhattan.jpg);
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.5), rgba(40, 180, 133, 0.5)), url(/assets/manhattan.jpg);
   background-size: cover;
   background-position: top;
   position: relative
@@ -1798,8 +1808,8 @@ body {
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), only screen and (min-resolution: 192dpi) and (min-width: 37.5em), only screen and (min-width: 125em) {
   .header {
-    background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(126, 213, 111, 0.8)), to(rgba(40, 180, 133, 0.8))), url(manhattan.jpg);
-    background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(manhattan.jpg)
+    background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(126, 213, 111, 0.8)), to(rgba(40, 180, 133, 0.8))), url(/assets/manhattan.jpg);
+    background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(/assets/manhattan.jpg)
   }
 }
 
@@ -1837,7 +1847,7 @@ body {
   background-color: #fff;
   height: 7rem;
   width: 7rem;
-  position: fixed;
+  position: absolute;
   top: 6rem;
   right: 6rem;
   border-radius: 50%;
@@ -1866,7 +1876,7 @@ body {
   height: 6rem;
   width: 6rem;
   border-radius: 50%;
-  position: fixed;
+  position: absolute;
   top: 6.5rem;
   right: 6.5rem;
   background-image: radial-gradient(#7ed56f, #28b485);
