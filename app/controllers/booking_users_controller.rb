@@ -1,42 +1,28 @@
 class BookingUsersController < ApplicationController
   before_action :authenticate_user!
-    layout :resolve_layout
+  layout :resolve_layout
   def new
     @booking = Booking.find(params[:booking_id])
     @booking_user = BookingUser.new
   end
 
   def create
-     puts 'booking id'
-     @current_user =current_user.id.to_i
-      puts 'booking id'
-      puts params[:booking_id]
-      puts 'customer id '
-      puts @current_user
-      @user_bookings = BookingUser.find_by( booking_id: params[:booking_id].to_i, user_id: @current_user )
-
-      if @user_bookings == nil
-        @registration= BookingUser.create(booking_id: params[:booking_id].to_i, user_id: @current_user)
-
-        puts @registration
-        flash[:success] = 'Your registration has been successfully created'
-        redirect_to  userhome_index_path
-
-      else
-          flash[:error] = 'You have already Registrar.'
-          redirect_to new_booking_booking_user_path(params[:booking_id])
-
-
-      end
-
+   @current_user =current_user.id.to_i
+   @user_bookings = BookingUser.find_by( booking_id: params[:booking_id].to_i, user_id: @current_user )
+   if @user_bookings == nil
+     @registration= BookingUser.create(booking_id: params[:booking_id].to_i, user_id: @current_user)
+     flash[:success] = 'Your registration has been successfully created'
+     redirect_to  userhome_index_path
+   else
+     flash[:error] = 'You have already Registrar.'
+     redirect_to new_booking_booking_user_path(params[:booking_id])
+   end
   end
+
   def show
-      @current_user =current_user.id.to_i
-      @user_booking = BookingUsers.where(["user_id = ? ", @current_user])
-      p @user_booking
-
+    @current_user =current_user.id.to_i
+    @user_booking = BookingUsers.where(["user_id = ? ", @current_user])
   end
-
 
   private
     def booking_users_params
@@ -47,10 +33,8 @@ class BookingUsersController < ApplicationController
       case action_name
       when "new", "create"
         "secondary.html.erb"
-
       else
         "application.html.erb"
       end
     end
-
 end

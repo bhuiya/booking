@@ -10,45 +10,26 @@
    </div>
    <div class="modal-body">
     <%= form_for [@booking, @booking_user]  do |f| %>
-      <!-- <%= @booking.id %>
-      <%= @booking.name %>
-      <%= @booking.price %>
-
-      <%= @booking.address %>
-
-        <%= @booking.country %> -->
-
-        <ul class="table_format guest_two font_properties ">
-
-
-
-              <li class="font_properties ">&nbsp &nbsp Booking Name: <%=  @booking.name %></li>
-              <li class="font_properties "> &nbsp &nbsp  Price: <%=  @booking.price  %> </li>
-              <li class="font_properties"> &nbsp &nbsp Address: <%=  @booking.address  %> </li>
-              <li class="font_properties "> &nbsp &nbsp  State: <%=  @booking.state %> </li>
-              <li class="font_properties "> &nbsp &nbsp Country: <%=  @booking.country %> </li>
-              <li class="font_properties "> &nbsp &nbsp  Phone: <%= @booking.phone %> </li>
-                <li class="font_properties "> &nbsp &nbsp Email: <%= @booking.email %> </li>
-                <br>&nbsp
-
-                  &nbsp
-
-             <br>
-
-         </ul>
-         <div class="form-group">
-           <%= link_to "Cancel", userhome_index_path, :class => 'navbar-link table_text float-left'  %>
-         </div>
-    <div class="modal-footer">
+     <ul class="table_format guest_two font_properties ">
+       <li class="font_properties ">&nbsp &nbsp Booking Name: <%=  @booking.name %></li>
+       <li class="font_properties "> &nbsp &nbsp  Price: <%=  @booking.price  %> </li>
+       <li class="font_properties"> &nbsp &nbsp Address: <%=  @booking.address  %> </li>
+       <li class="font_properties "> &nbsp &nbsp  State: <%=  @booking.state %> </li>
+       <li class="font_properties "> &nbsp &nbsp Country: <%=  @booking.country %> </li>
+       <li class="font_properties "> &nbsp &nbsp  Phone: <%= @booking.phone %> </li>
+       <li class="font_properties "> &nbsp &nbsp Email: <%= @booking.email %> </li>
+       <br>&nbsp
+        &nbsp
+       <br>
+      </ul>
+      <div class="form-group">
+        <%= link_to "Cancel", userhome_index_path, :class => 'navbar-link table_text float-left'  %>
+      </div>
+      <div class="modal-footer">
         <%= f.submit "Confirm !!", class:" btn  btn-success btn--animated" %>
-    </div>
-    <% end %>
-  </div>
+      </div>
+     <% end %>
+   </div>
   </div>
  </div>
 </div>
-
-<!-- <%= form_for [@booking, @booking_user]  do |f| %>
-
-  <%= f.submit 'Registrar' %>
-<% end %> -->
