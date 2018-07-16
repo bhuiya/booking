@@ -12,6 +12,7 @@
 //
 //= require rails-ujs
 //= require jquery/dist/jquery
+//= require jquery_ujs
 //= require toastr/build/toastr.min.js
 //= require bootstrap/dist/js/bootstrap.min
 //= require_tree .
