@@ -917,16 +917,16 @@ body {
 }
 
 .btn--green::after {
-  background-color: #55c57a
+  background-color: #55c57a;
 }
 
 .btn--blue {
-  background-color: ##4267B2;
+  background-color: #4267B2;
   color: #fff
 }
 
 .btn--blue::after {
-  background-color: ##4267B2
+  background-color: #4267B2;
 }
 
 .btn::after {
@@ -1435,7 +1435,7 @@ body {
   .popup {
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
-    background-color: rgba(0, 0, 0, 0.3)
+    background-color: rgba(0, 0, 0, 0.3);
   }
 }
 
