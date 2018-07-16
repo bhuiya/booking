@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     resources :booking_users, only: [:new, :create, :show, :edit]
   end
 
-  root :to => 'home#index'
+  # root :to => 'home#index'
+  root  'home#index'
 
 end
